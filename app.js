@@ -1,5 +1,5 @@
 const express = require('express');
-//const logger = require('./src/config/logger');
+const logger = require('./src/config/logger');
 const app = express();
 
 // Para las variables de entorno
@@ -19,4 +19,6 @@ app.listen(PORT, () => {
   console.log('🚀 Iniciando aplicación...');
   console.log('App activa en el puerto ' + PORT);
   console.log('====================================');
+
+  logger.info(`Servidor iniciado en el puerto ${PORT}`);
 });
