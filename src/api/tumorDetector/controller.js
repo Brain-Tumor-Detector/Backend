@@ -24,12 +24,14 @@ module.exports = {
       return res.status(400).send(webResponse);
     }
 
+    console.log(listImages[0]);
+
     // Procesamos la imagen con la IA
-    //const resizedImages = await model.resize(listImages);
+    const resizedImages = await model.resize(listImages[0]);
 
-    //const result = await model.predict(listImages[0]);
+    const result = await model.predict(listImages[0]);
 
-    //console.log(result);
+    console.log(result);
 
     webResponse.status = 200;
     webResponse.data = {};
